@@ -1,9 +1,15 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'  //(需額外加上)
+//    id 'kotlin-android-extensions'  //(需額外加上)
+    id 'kotlin-parcelize'  //(需額外加上)
 }
 
 android {
+    buildFeatures {
+        viewBinding true
+    }
     namespace 'com.example.guess'
     compileSdk 33
 
@@ -24,7 +30,7 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
+//        sourceCompatibility JavaVersion.VERSION_1_899
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
